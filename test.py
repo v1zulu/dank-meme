@@ -19,3 +19,4 @@ while b < NumNames :
         b +=1
 print (len(A))
 print (NumAppear)
+print(LOL)
