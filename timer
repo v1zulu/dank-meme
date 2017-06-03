@@ -1,0 +1,62 @@
+import math
+import time
+import tkinter
+import sys
+from tkinter import*
+import os
+
+FlashCD = 360
+
+def countdown (n) :
+
+    LaCountDown['text']=n
+
+    if n > 0:
+        AllFlashCD.after(1000, countdown,n-1)
+
+def Restart():
+    python = sys.executable
+    os.execl(python,python,* sys.argv)
+
+AllFlashCD = Tk()
+AllFlashCD.title('AllFlashCD')
+
+TopFrame = Frame(AllFlashCD)
+TopFrame.pack()
+JungleF = Frame(AllFlashCD)
+JungleF.pack()
+MidF = Frame(AllFlashCD)
+MidF.pack()
+ADC = Frame(AllFlashCD)
+ADC.pack()
+SupF = Frame(AllFlashCD)
+SupF.pack()
+
+Button1 = Button(TopFrame, text="Reset" , command = Restart)
+Button2 = Button(TopFrame, text="Start")
+Button3 = Button(JungleF, text="Reset")
+Button4 = Button(JungleF, text="Start")
+Button5 = Button(MidF, text="Reset")
+Button6 = Button(MidF, text="Start")
+Button7 = Button(ADC, text="Reset")
+Button8 = Button(ADC, text="Start")
+Button9 = Button(SupF, text="Reset")
+Button10 = Button(SupF, text="Start")
+
+Button1.pack(side=LEFT)
+Button2.pack(side=LEFT)
+Button3.pack(side=LEFT)
+Button4.pack(side=LEFT)
+Button5.pack(side=LEFT)
+Button6.pack(side=LEFT)
+Button7.pack(side=LEFT)
+Button8.pack(side=LEFT)
+Button9.pack(side=LEFT)
+Button10.pack(side=LEFT)
+
+#timeer
+LaCountDown = Label(TopFrame)  # where timer go 5 choices
+LaCountDown.pack()
+countdown(360)
+
+AllFlashCD.mainloop()
